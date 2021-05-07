@@ -4,6 +4,7 @@
     "keywords": ["PHP","Shoplazza","SDK"],
     "homepage": "https://github.com/gztango/php-shoplazza",
     "type": "library",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.1",
         "ext-curl": "*",
