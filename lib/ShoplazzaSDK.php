@@ -221,7 +221,7 @@ class ShoplazzaSDK
     /**
      * @var string Default Shoplazza API version
      */
-    public static $defaultApiVersion = '2021-01';
+    public static $defaultApiVersion = '2020-07';
 
     /**
      * Shop / API configurations
@@ -369,11 +369,11 @@ class ShoplazzaSDK
             $apiPassword = self::$config['Password'];
             $adminUrl = "https://$apiKey:$apiPassword@$shopUrl/admin/";
         } else {
-            $adminUrl = "https://$shopUrl/admin/";
+            $adminUrl = "https://$shopUrl/";
         }
 
         self::$config['AdminUrl'] = $adminUrl;
-        self::$config['ApiUrl'] = $adminUrl . "api/$apiVersion/";
+        self::$config['ApiUrl'] = $adminUrl . "openapi/$apiVersion/";
 
         return $adminUrl;
     }

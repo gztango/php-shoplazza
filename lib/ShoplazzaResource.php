@@ -145,7 +145,7 @@ abstract class ShoplazzaResource
         $this->resourceUrl = ($parentResourceUrl ? $parentResourceUrl . '/' :  $config['ApiUrl']) . $this->getResourcePath() . ($this->id ? '/' . $this->id : '');
 
         if (isset($config['AccessToken'])) {
-            $this->httpHeaders['X-Shoplazza-Access-Token'] = $config['AccessToken'];
+            $this->httpHeaders['Access-Token'] = $config['AccessToken'];
         } elseif (!isset($config['ApiKey']) || !isset($config['Password'])) {
             throw new SdkException("Either AccessToken or ApiKey+Password Combination (in case of private API) is required to access the resources. Please check SDK configuration!");
         }
@@ -319,7 +319,7 @@ abstract class ShoplazzaResource
      */
     public function generateUrl($urlParams = array(), $customAction = null)
     {
-        return $this->resourceUrl . ($customAction ? "/$customAction" : '') . '.json' . (!empty($urlParams) ? '?' . http_build_query($urlParams) : '');
+        return $this->resourceUrl . ($customAction ? "/$customAction" : '') . (!empty($urlParams) ? '?' . http_build_query($urlParams) : '');
     }
 
     /**
@@ -550,7 +550,7 @@ abstract class ShoplazzaResource
             if($message=='account already enabled'){
                 return array('account_activation_url'=>false);
             }
-            
+
             throw new ApiException($message, CurlRequest::$lastHttpCode);
         }
 

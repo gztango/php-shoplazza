@@ -40,7 +40,7 @@ class HttpRequestGraphQL extends HttpRequestJson
             throw new SdkException("Only GraphQL string is allowed!");
         }
 
-        if (!isset($httpHeaders['X-Shoplazza-Access-Token'])) {
+        if (!isset($httpHeaders['Access-Token'])) {
             throw new SdkException("The GraphQL Admin API requires an access token for making authenticated requests!");
         }
 

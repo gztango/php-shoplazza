@@ -55,7 +55,7 @@ class CurlRequest
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
         curl_setopt($ch, CURLOPT_HEADER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'PHPClassic/PHPShoplazza');
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.98 Safari/537.36');
 
         $headers = array();
         foreach ($httpHeaders as $key => $value) {
